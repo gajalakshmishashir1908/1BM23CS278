@@ -1,0 +1,166 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define SIZE 5
+int STACK[SIZE];
+int top = -1;
+void push(int value) {
+    if (top == SIZE - 1){
+        printf("Stack overflow!");
+    }
+    else {
+        top++;
+        STACK[top]=value;
+        printf("%d pushed onto stack\n",value);
+    }
+}
+void pop() {
+    if(top==-1) {
+        printf("Stack underflow!!");
+    }
+    else{
+        int value = STACK[top];
+        top--;
+        printf("%d popped successfully!\n",value);
+    }
+}
+void display(){
+    if(top==-1){
+        printf("stack is empty\n");
+    }
+    else{
+        printf("stack elements :\n");
+        for(int i=top;i>=0;i--){
+            printf("%d",STACK[i]);
+            printf("\n");
+        }
+
+    }
+}
+int main() {
+    int choice,a;
+    while(1) {
+        printf(" 1.push\n 2.pop\n 3.display\n 4-exit\n");
+        printf("CHOOSE OPERATION:\n");
+        scanf("%d",&choice);
+        switch(choice) {
+            case 1:
+                printf("Enter scan elements:");
+                scanf("%d",&a);
+                push(a);
+                break;
+            case 2:
+                pop();
+                break;
+            case 3:
+                display();
+                break;
+            case 4:
+                printf("Exiting.......");
+                exit(0);
+                break;
+            default :
+                printf("Invalid choice! enter again");
+        }
+    }
+    return 0;
+}
+
+
+OUTPUT:
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 1
+Enter scan elements: 10
+10 pushed onto stack
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 1
+Enter scan elements: 20
+20 pushed onto stack
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 1
+Enter scan elements: 30
+30 pushed onto stack
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 1
+Enter scan elements: 40
+40 pushed onto stack
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 1
+Enter scan elements: 50
+50 pushed onto stack
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 1
+Enter scan elements: 60
+Stack overflow!
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 3
+stack elements:
+50
+40
+30
+20
+10
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 2
+50 popped successfully!
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 2
+40 popped successfully!
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 2
+30 popped successfully!
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 2
+20 popped successfully!
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 2
+10 popped successfully!
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 2
+Stack underflow!
+1.push 
+2.pop
+3.display
+4.exit 
+CHOOSE OPERATION: 4
+Exiting.....
+Press any key to continue
+
